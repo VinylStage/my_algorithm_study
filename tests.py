@@ -247,6 +247,8 @@ for m in moves:
             pass
         elif board[b][m-1] != 0:
             temp.append(board[b][m-1])
+            if temp[-1:] == temp[-2:-1]:
+                temp.remove(board[b][m-1])
             board[b][m-1] = 0
             break
 
