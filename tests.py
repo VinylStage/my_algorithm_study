@@ -244,14 +244,15 @@ import math
 # ]
 # moves = [1, 5, 3, 5, 1, 2, 1, 4]
 
+
 # def solution(board, moves):
 #     temp = []
 #     answer = 0
 #     for m in moves:
-#         for b, c in enumerate(board):
-#             if board[b][m - 1] != 0:
-#                 temp.append(board[b][m - 1])
-#                 board[b][m - 1] = 0
+#         for _, c in enumerate(board):
+#             if c[m - 1] != 0:
+#                 temp.append(c[m - 1])
+#                 c[m - 1] = 0
 #                 if len(temp) > 1:
 #                     if temp[-1] == temp[-2]:
 #                         temp.pop(-1)
@@ -259,6 +260,8 @@ import math
 #                         answer += 2
 #                 break
 #     return answer
+
+
 """꼬리 문자열"""
 
 # str_list = ["abc", "def", "ghi"]
@@ -271,7 +274,7 @@ import math
 #     for i in str_list:
 #         if ex not in i:
 #             answer.append(i)
-#     return ''.join(answer)`
+#     return ''.join(answer)
 
 """List Comprehensions"""
 
