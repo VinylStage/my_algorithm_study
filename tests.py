@@ -145,7 +145,7 @@ import math
 
 # n = 10
 
-'''정답'''
+"""정답"""
 
 # def measure(n):
 #     answer = []
@@ -154,7 +154,7 @@ import math
 #             answer.append(i)
 #     return answer
 
-'''숏'''
+"""숏"""
 
 # def measure_short(n):
 #     return [i for i in range(1, n+1) if n % i == 1][0]
@@ -162,7 +162,7 @@ import math
 
 # 백준 영수증
 
-'''정답'''
+"""정답"""
 
 # total = int(input())
 # n = int(input())
@@ -176,7 +176,7 @@ import math
 #     print('No')
 
 
-'''리스트컴프리헨션 사용'''
+"""리스트컴프리헨션 사용"""
 
 # total = int(input())
 # types = int(input())
@@ -193,7 +193,7 @@ import math
 # print(s+r+h)
 
 
-'''백준 행렬의 덧셈'''
+"""백준 행렬의 덧셈"""
 
 # a = [[1, 2, 3], [2, 2, 2], [0, 1, 0]]
 # b = [[3, 3, 3], [4, 4, 4], [5, 5, 100]]
@@ -203,7 +203,7 @@ import math
 #         print(i, j)
 
 
-'''프로그래머스 피자 나눠 먹기(2)'''
+"""프로그래머스 피자 나눠 먹기(2)"""
 
 # a = n // g
 # b = 6 // g
@@ -219,7 +219,7 @@ import math
 
 # print(solution(n))
 
-'''백준 팰린드롬인지 확인하기'''
+"""백준 팰린드롬인지 확인하기"""
 
 # 비효율적으로 보임
 # a = str(input())
@@ -233,31 +233,37 @@ import math
 # a=input();print(+(a[::-1]==a))
 
 
-'''크레인 인형뽑기 게임'''
+"""크레인 인형뽑기 게임"""
 
-board = [[0, 0, 0, 0, 0], [0, 0, 1, 0, 3], [
-    0, 2, 5, 0, 1], [4, 2, 4, 4, 2], [3, 5, 1, 3, 1]]
+board = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 3],
+    [0, 2, 5, 0, 1],
+    [4, 2, 4, 4, 2],
+    [3, 5, 1, 3, 1],
+]
 moves = [1, 5, 3, 5, 1, 2, 1, 4]
 temp = []
 answers = 0
 
 for m in moves:
     for b, c in enumerate(board):
-        if board[b][m-1] == 0:
+        if board[b][m - 1] == 0:
             pass
-        elif board[b][m-1] != 0:
-            temp.append(board[b][m-1])
-            board[b][m-1] = 0
+        elif board[b][m - 1] != 0:
+            temp.append(board[b][m - 1])
+            board[b][m - 1] = 0
             break
 
 print(board)
 print(temp)
-'''꼬리 문자열'''
+
+"""꼬리 문자열"""
 
 # str_list = ["abc", "def", "ghi"]
 # ex = 'ef'
 
-'''answer'''
+"""answer"""
 
 # def solution(str_list, ex):
 #     answer = []
@@ -266,12 +272,12 @@ print(temp)
 #             answer.append(i)
 #     return ''.join(answer)`
 
-'''List Comprehensions'''
+"""List Comprehensions"""
 
 # def solution(str_list, ex):
 #     return ''.join([i for i in str_list if ex not in i])
 
-'''Lambda Comprehensions'''
+"""Lambda Comprehensions"""
 
 # def solution(str_list, ex):
 #     return ''.join(filter(lambda x: ex not in x, str_list))
