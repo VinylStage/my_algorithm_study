@@ -235,29 +235,30 @@ import math
 
 """크레인 인형뽑기 게임"""
 
-board = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 3],
-    [0, 2, 5, 0, 1],
-    [4, 2, 4, 4, 2],
-    [3, 5, 1, 3, 1],
-]
-moves = [1, 5, 3, 5, 1, 2, 1, 4]
-temp = []
-answers = 0
+# board = [
+#     [0, 0, 0, 0, 0],
+#     [0, 0, 1, 0, 3],
+#     [0, 2, 5, 0, 1],
+#     [4, 2, 4, 4, 2],
+#     [3, 5, 1, 3, 1],
+# ]
+# moves = [1, 5, 3, 5, 1, 2, 1, 4]
 
-for m in moves:
-    for b, c in enumerate(board):
-        if board[b][m - 1] == 0:
-            pass
-        elif board[b][m - 1] != 0:
-            temp.append(board[b][m - 1])
-            board[b][m - 1] = 0
-            break
-
-print(board)
-print(temp)
-
+# def solution(board, moves):
+#     temp = []
+#     answer = 0
+#     for m in moves:
+#         for b, c in enumerate(board):
+#             if board[b][m - 1] != 0:
+#                 temp.append(board[b][m - 1])
+#                 board[b][m - 1] = 0
+#                 if len(temp) > 1:
+#                     if temp[-1] == temp[-2]:
+#                         temp.pop(-1)
+#                         temp.pop(-1)
+#                         answer += 2
+#                 break
+#     return answer
 """꼬리 문자열"""
 
 # str_list = ["abc", "def", "ghi"]
