@@ -285,3 +285,39 @@ import math
 
 # def solution(str_list, ex):
 #     return ''.join(filter(lambda x: ex not in x, str_list))
+
+
+'''백준 숫자 카드'''
+
+# n = int(input())
+# c = list(map(int, input().split()))
+# m = int(input())
+# d = list(map(int, input().split()))
+# print(*[+(j in c) for j in d])
+# 시간초과
+
+
+'''프로그래머스 햄버거 만들기'''
+
+# 여섯번째 재료가 쌓일때 3번으로부터 6번을 이용하여 포장 - 총 len()이 6일때 [3]부터 [6]까지 포장
+# 거시기거시기 - len()이 9일때 [2]와 [7]~[9]로 포장
+# 야채 빵 빵 야채 고기 빵 야채 고기 빵
+# [2, 1, 1, 2, 3, 1, 2, 3, 1]
+# 빵 야채 고기 빵
+# 빵 = 1
+# 야채 = 2
+# 고기 = 3
+b = 1
+v = 2
+m = 3
+ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]
+hamburger = [1, 2, 3, 1]
+
+hbg = []
+answer = 0
+if len(ingredient) == 6:     
+    hbg.append(ingredient[2:6])
+    if hbg == hamburger:
+        answer += 1
+        hbg = []
+        
