@@ -328,16 +328,30 @@ start = time.time()
 # print(borgir)
 
 '''주사위 세개'''
-a, b, c = sorted(map(int, input().split()))
-if a == c:
-    print(10000 + a * 1000)
-elif a == b or b == c:
-    print(1000 + b * 100)
-else:
-    print(c * 100)
+# a, b, c = sorted(map(int, input().split()))
+# if a == c:
+#     print(10000 + a * 1000)
+# elif a == b or b == c:
+#     print(1000 + b * 100)
+# else:
+#     print(c * 100)
 
-    
+'''수포자'''
 
+g1 = 1, 2, 3, 4, 5
+g2 = 2, 1, 2, 3, 2, 4, 2, 5
+g3 = 3, 3, 1, 1, 2, 2, 4, 4, 5, 5
+answers = [1,3,2,4,2]
+a = []
+for i in range(len(answers)):
+    if g1[i] == answers[i]:
+        a.append(1)
+    elif g2[i] == answers[i]:
+        a.append(2)
+    elif g3[i] == answers[i]:
+        a.append(3)
+            
+print(sorted(set(a)))
 
 end = time.time()
 print(f"{end - start:.5f} sec")
