@@ -318,13 +318,29 @@ start = time.time()
 # b = 1
 # v = 2
 # m = 3
-ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]	
-hamburger = [1, 2, 3, 1]
-borgir = []
-for i in ingredient:
-    borgir.append(i)
-    print(borgir)
-    borgir.remove(hamburger)
-print(borgir)
+# ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]	
+# hamburger = [1, 2, 3, 1]
+# borgir = []
+# for i in ingredient:
+#     borgir.append(i)
+#     print(borgir)
+#     borgir.remove(hamburger)
+# print(borgir)
+
+a = map(int, input().split())
+
+for i in a:
+    if len(set(a)) == 1:
+        print(i)
+        print(10000 + i*1000)
+    elif len(set(a))==2 and i in a:
+        print(i)
+        print(1000 + i*100)
+    elif len(set(a))==3:
+        print(i)
+        print(max(a)*100)
+        
+
+
 end = time.time()
 print(f"{end - start:.5f} sec")
