@@ -327,17 +327,14 @@ start = time.time()
 #     borgir.remove(hamburger)
 # print(borgir)
 
-a = map(int, input().split())
+a = list(map(int, input().split()))
 
 for i in a:
     if len(set(a)) == 1:
-        print(i)
         print(10000 + i*1000)
     elif len(set(a))==2 and i in a:
-        print(i)
         print(1000 + i*100)
     elif len(set(a))==3:
-        print(i)
         print(max(a)*100)
         
 
