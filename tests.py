@@ -1,4 +1,8 @@
 import math
+import time
+import sys
+
+start = time.time()
 
 # '''dictionary'''
 
@@ -289,12 +293,16 @@ import math
 
 '''백준 숫자 카드'''
 
-# n = int(input())
-# c = list(map(int, input().split()))
-# m = int(input())
-# d = list(map(int, input().split()))
-# print(*[+(j in c) for j in d])
-# 시간초과
+# n = int(sys.stdin.readline())
+# c = list(map(int, sys.stdin.readline().split()))
+# m = int(sys.stdin.readline())
+# d = list(map(int, sys.stdin.readline().split()))
+# temp = {}
+# for i in range(len(c)):
+#     temp[c[i]] = 0
+# print(*[+(d[k] in temp) for k in range(m)])
+
+
 
 
 '''프로그래머스 햄버거 만들기'''
@@ -307,17 +315,16 @@ import math
 # 빵 = 1
 # 야채 = 2
 # 고기 = 3
-b = 1
-v = 2
-m = 3
-ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]
+# b = 1
+# v = 2
+# m = 3
+ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]	
 hamburger = [1, 2, 3, 1]
-
-hbg = []
-answer = 0
-if len(ingredient) == 6:     
-    hbg.append(ingredient[2:6])
-    if hbg == hamburger:
-        answer += 1
-        hbg = []
-        
+borgir = []
+for i in ingredient:
+    borgir.append(i)
+    print(borgir)
+    borgir.remove(hamburger)
+print(borgir)
+end = time.time()
+print(f"{end - start:.5f} sec")
