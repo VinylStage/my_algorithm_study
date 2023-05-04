@@ -338,20 +338,51 @@ start = time.time()
 
 '''수포자'''
 
-g1 = 1, 2, 3, 4, 5
-g2 = 2, 1, 2, 3, 2, 4, 2, 5
-g3 = 3, 3, 1, 1, 2, 2, 4, 4, 5, 5
-answers = [1,3,2,4,2]
-a = []
-for i in range(len(answers)):
-    if g1[i] == answers[i]:
-        a.append(1)
-    elif g2[i] == answers[i]:
-        a.append(2)
-    elif g3[i] == answers[i]:
-        a.append(3)
+# g1 = 1, 2, 3, 4, 5
+# g2 = 2, 1, 2, 3, 2, 4, 2, 5
+# g3 = 3, 3, 1, 1, 2, 2, 4, 4, 5, 5
+# answers = [1,3,2,4,2]
+# a = []
+# for i in range(len(answers)):
+#     if g1[i] == answers[i]:
+#         a.append(1)
+#     elif g2[i] == answers[i]:
+#         a.append(2)
+#     elif g3[i] == answers[i]:
+#         a.append(3)
             
-print(sorted(set(a)))
+# print(sorted(set(a)))
+
+'''달리기 경주'''
+
+# 1 mumu soe kai poe mine
+# 2 mumu kai soe poe mine
+# 3 mumu kai soe mine poe
+# 4 mumu kai mine soe poe
+
+players = ["mumu", "soe", "poe", "kai", "mine"]	
+callings = 	["kai", "kai", "mine", "mine"]
+demp = []
+player = {p:i for i, p in enumerate(players)}
+
+
+for _, j in enumerate(callings):
+    p = player[j]
+    play = {v:k for k, v in player.items()}
+    pl = player[play[p-1]]
+    demp = play[p]
+    play[p] = play[pl]
+    play[pl] = demp
+    
+print(player)
+
+#     # players[players.index(j)-1] = j
+#     # players[players.index(j)+1] = temp[0]
+#     # temp = []
+#     print(type(player.get(j)))
+# {0: 'mumu', 1: 'soe', 2: 'poe', 3: 'kai', 4: 'mine'}
+
+
 
 end = time.time()
 print(f"{end - start:.5f} sec")
