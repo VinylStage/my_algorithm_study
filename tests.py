@@ -327,16 +327,16 @@ start = time.time()
 #     borgir.remove(hamburger)
 # print(borgir)
 
-a = list(map(int, input().split()))
+'''주사위 세개'''
+a, b, c = sorted(map(int, input().split()))
+if a == c:
+    print(10000 + a * 1000)
+elif a == b or b == c:
+    print(1000 + b * 100)
+else:
+    print(c * 100)
 
-for i in a:
-    if len(set(a)) == 1:
-        print(10000 + i*1000)
-    elif len(set(a))==2 and i in a:
-        print(1000 + i*100)
-    elif len(set(a))==3:
-        print(max(a)*100)
-        
+    
 
 
 end = time.time()
