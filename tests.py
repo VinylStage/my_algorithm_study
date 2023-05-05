@@ -362,27 +362,29 @@ start = time.time()
 
 players = ["mumu", "soe", "poe", "kai", "mine"]	
 callings = 	["kai", "kai", "mine", "mine"]
-demp = []
-player = {p:i for i, p in enumerate(players)}
 
 
-for _, j in enumerate(callings):
-    p = player[j]
-    play = {v:k for k, v in player.items()}
-    pl = player[play[p-1]]
-    demp = play[p]
-    play[p] = play[pl]
-    play[pl] = demp
-    
-print(player)
+def solution(player, callings):
+    demp = []
+    answer = {}
+    player = {p:i for i, p in enumerate(players)}
+    for _, j in enumerate(callings):
+        p = player[j]
+        play = {v:k for k, v in player.items()}
+        pl = player[play[p-1]]    
+        demp = player[play[p]]
+        player[play[p]] = player[play[pl]]
+        player[play[pl]] = demp
+        demp = []
+        answer = {v:k for k, v in player.items()}
+    return answer
+print(solution(players, callings))
 
 #     # players[players.index(j)-1] = j
 #     # players[players.index(j)+1] = temp[0]
 #     # temp = []
 #     print(type(player.get(j)))
 # {0: 'mumu', 1: 'soe', 2: 'poe', 3: 'kai', 4: 'mine'}
-
-
 
 end = time.time()
 print(f"{end - start:.5f} sec")
