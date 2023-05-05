@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "study-vinyl"
+version = "0.1.0"
+description = ""
+authors = ["vinyl <mcpe9869@gmail.com>"]
+readme = "README.md"
+packages = [{include = "study_vinyl"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tqdm = "^4.65.0"
+progressbar = "^2.5"
+alive-progress = "^3.1.1"
+yaspin = "^2.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
