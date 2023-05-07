@@ -25,5 +25,5 @@ def tqdm_test(data:int) -> None:
     pbar = tqdm(range(data))
     for _ in pbar:
         time.sleep(0.01)
-        print('Loaded')
+    print('Loaded')
     pbar.close()

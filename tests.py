@@ -319,13 +319,17 @@ start = time.time()
 # v = 2
 # m = 3
 # ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]	
-# hamburger = [1, 2, 3, 1]
-# borgir = []
-# for i in ingredient:
-#     borgir.append(i)
-#     print(borgir)
-#     borgir.remove(hamburger)
-# print(borgir)
+# def solution(ingredient):
+#     hamburger = [1, 2, 3, 1]
+#     hbg = []
+#     answer = 0
+#     for i in ingredient:
+#         for h in hamburger:
+#             if i == h:
+#                 ingredient.pop(h)
+#         answer += 1
+#     return answer
+# print(solution(ingredient))
 
 '''주사위 세개'''
 # a, b, c = sorted(map(int, input().split()))
@@ -360,31 +364,77 @@ start = time.time()
 # 3 mumu kai soe mine poe
 # 4 mumu kai mine soe poe
 
-players = ["mumu", "soe", "poe", "kai", "mine"]	
-callings = 	["kai", "kai", "mine", "mine"]
+# players = ["mumu", "soe", "poe", "kai", "mine"]	
+# callings = 	["kai", "kai", "mine", "mine"]
 
 
-def solution(player, callings):
-    demp = []
-    answer = {}
-    player = {p:i for i, p in enumerate(players)}
-    for _, j in enumerate(callings):
-        p = player[j]
-        play = {v:k for k, v in player.items()}
-        pl = player[play[p-1]]    
-        demp = player[play[p]]
-        player[play[p]] = player[play[pl]]
-        player[play[pl]] = demp
-        demp = []
-        answer = {v:k for k, v in player.items()}
-    return answer
-print(solution(players, callings))
+# def solution(player, callings):
+#     demp = []
+#     answer = {}
+#     player = {p:i for i, p in enumerate(players)}
+#     for _, j in enumerate(callings):
+#         p = player[j]
+#         play = {v:k for k, v in player.items()}
+#         pl = player[play[p-1]]    
+#         demp = player[play[p]]
+#         player[play[p]] = player[play[pl]]
+#         player[play[pl]] = demp
+#         demp = []
+#         answer = {v:k for k, v in player.items()}
+#     return answer
+# print(solution(players, callings))
 
-#     # players[players.index(j)-1] = j
-#     # players[players.index(j)+1] = temp[0]
-#     # temp = []
+    # players[players.index(j)-1] = j
+    # players[players.index(j)+1] = temp[0]
+    # temp = []
 #     print(type(player.get(j)))
 # {0: 'mumu', 1: 'soe', 2: 'poe', 3: 'kai', 4: 'mine'}
+
+# def solution(players, callings):
+#     players_dictionary = {string: i for i, string in enumerate(players)}
+#     for i in callings:
+#         call_index = players_dictionary[i]  # 3
+#         players_dictionary[players[call_index-1]] += 1  # poe +1
+#         players_dictionary[i] -= 1  # kai -1
+#         players[call_index -
+#                 1], players[call_index] = players[call_index], players[call_index-1]
+#     return players
+
+'''약수의 합'''
+
+# def solution(n):
+#     return sum([i for i in range(1, n+1) if n % i == 0])
+
+'''자릿수 더하기'''
+
+# def solution(n):
+#     return sum([int(i) for i in str(n)])
+
+# babbling = ["ayaye", "uuuma", "ye", "yemawoo", "ayaa"]	
+# bab = ["aya", "ye", "woo", "ma"]
+
+# def solution(babbling):
+#     babi = []
+#     sb = []
+#     answer = 0
+#     for _, j in enumerate(babbling):
+#         for bb in bab:
+#             if bb in j:
+#                 if bb == j:
+#                     print('if', j)
+#                     answer += 1
+#                     babbling.remove(bb)
+#                 else:                    
+#                     babi.append(j.replace(bb, ''))
+                #     sb = set(babi)
+    # for _, t in enumerate(sb):
+    #     for bb in bab:
+    #         t.replace(bb, '')
+    #         if len(t) == 0:
+    #             answer += 1
+    # return sb
+
+# print(solution(babbling))
 
 end = time.time()
 print(f"{end - start:.5f} sec")
