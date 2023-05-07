@@ -367,22 +367,14 @@ start = time.time()
 # players = ["mumu", "soe", "poe", "kai", "mine"]	
 # callings = 	["kai", "kai", "mine", "mine"]
 
-
-# def solution(player, callings):
-#     demp = []
-#     answer = {}
+# def solution(players, callings):
 #     player = {p:i for i, p in enumerate(players)}
-#     for _, j in enumerate(callings):
-#         p = player[j]
-#         play = {v:k for k, v in player.items()}
-#         pl = player[play[p-1]]    
-#         demp = player[play[p]]
-#         player[play[p]] = player[play[pl]]
-#         player[play[pl]] = demp
-#         demp = []
-#         answer = {v:k for k, v in player.items()}
-#     return answer
-# print(solution(players, callings))
+#     for j in callings:
+#         p = player[j] # 3
+#         player[players[p-1]] += 1
+#         player[j] -= 1
+#         players[p-1], players[p] = players[p], players[p-1]
+#     return players
 
     # players[players.index(j)-1] = j
     # players[players.index(j)+1] = temp[0]
@@ -399,6 +391,8 @@ start = time.time()
 #         players[call_index -
 #                 1], players[call_index] = players[call_index], players[call_index-1]
 #     return players
+
+# print(solution(players, callings))
 
 '''약수의 합'''
 
